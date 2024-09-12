@@ -1,5 +1,5 @@
 resource "aws_security_group" "sg1" {
-    name = "test-sg"
+    name = "terraform-sg"
     description = "Allow ssh and httpd"
     
    
