@@ -8,6 +8,12 @@ pepiline{
                 }
 
             }
+            stage('validate'){
+                steps{
+                    sh 'terraform validate -no-color'
+                }
+
+            }
         }
     }
 }
