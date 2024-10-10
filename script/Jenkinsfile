@@ -6,13 +6,21 @@ pepiline{
                 steps{
                     sh 'terraform init -no-color'
                 }
-
             }
             stage('validate'){
                 steps{
                     sh 'terraform validate -no-color'
                 }
-
+            }
+            stage('format'){
+                steps{
+                    sh 'fmt -no-color'
+                }
+            }
+            stage('plan'){
+                steps{
+                    sh 'plan -no-color'
+                }
             }
         }
     }
