@@ -1,27 +1,25 @@
 pipeline{
-    agent any {
-
-        stages{
-            stage('init'){
+    agent any 
+    stages{
+        stage('init'){
                 steps{
                     sh 'terraform init -reconfigure -no-color'
                 }
-            }
-            stage('validate'){
+        }
+        stage('validate'){
                 steps{
                     sh 'terraform validate -no-color'
                 }
-            }
-            stage('format'){
+        }
+        stage('format'){
                 steps{
                     sh 'fmt -no-color'
                 }
-            }
-            stage('plan'){
+        }
+        stage('plan'){
                 steps{
                     sh 'plan -no-color'
                 }
-            }
         }
     }
 }
